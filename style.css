@@ -1,0 +1,624 @@
+/* ==============================
+   GENERAL SETTINGS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    min-height: 100vh;
+
+    padding: 30px 15px;
+
+    background-image: url("images/kids-background.png.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* ==============================
+   MAIN CONTAINER
+================================ */
+
+.container {
+
+    width: 100%;
+
+    max-width: 680px;
+
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 4px solid #ffd166;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 10px 0 rgba(255, 159, 28, 0.8),
+        0 15px 35px rgba(0, 0, 0, 0.20);
+
+    backdrop-filter: blur(3px);
+}
+
+
+/* ==============================
+   TITLE
+================================ */
+
+h1 {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    color: #ff6b6b;
+
+    margin-bottom: 8px;
+
+    text-shadow: 2px 2px #ffd166;
+}
+
+
+.subtitle {
+
+    text-align: center;
+
+    font-size: 18px;
+
+    color: #52708c;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   INPUT AREA
+================================ */
+
+.input-section {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+}
+
+
+#taskInput {
+
+    flex: 1;
+
+    padding: 15px 18px;
+
+    font-size: 17px;
+
+    font-family: inherit;
+
+    border: 3px solid #73cfff;
+
+    border-radius: 18px;
+
+    outline: none;
+
+    background: #ffffff;
+}
+
+
+#taskInput:focus {
+
+    border-color: #ffb703;
+
+    box-shadow: 0 0 8px rgba(255, 183, 3, 0.4);
+}
+
+
+/* ==============================
+   BUTTONS
+================================ */
+
+button {
+
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 16px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ADD TASK BUTTON */
+
+.input-section button {
+
+    background: #42c76b;
+
+    color: white;
+
+    border-bottom: 5px solid #29964b;
+}
+
+
+/* ==============================
+   FILTER BUTTONS
+================================ */
+
+.filter-section {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    flex-wrap: wrap;
+}
+
+
+.filter-section button:nth-child(1) {
+
+    background: #ffd166;
+
+    color: #654b00;
+}
+
+
+.filter-section button:nth-child(2) {
+
+    background: #ffafd0;
+
+    color: #7a2048;
+}
+
+
+.filter-section button:nth-child(3) {
+
+    background: #cbb7ff;
+
+    color: #4d318c;
+}
+
+
+/* ==============================
+   PROGRESS BOX
+================================ */
+
+.progress-box {
+
+    margin-bottom: 22px;
+
+    padding: 15px 18px;
+
+    background: #fff8d9;
+
+    border-radius: 18px;
+
+    border: 3px solid #ffd166;
+}
+
+
+.progress-text {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    color: #6b5700;
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 18px;
+
+    background: #eeeeee;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+#progressFill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #42c76b,
+        #ffd166,
+        #ff9f1c
+    );
+
+    border-radius: 20px;
+
+    transition: width 0.5s ease;
+}
+
+
+/* ==============================
+   TASK LIST
+================================ */
+
+#taskList {
+
+    list-style: none;
+
+    padding: 0;
+}
+
+
+/* TASK CARD */
+
+.task {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 14px 17px;
+
+    margin-bottom: 12px;
+
+    border-radius: 20px;
+
+    border: 3px solid #ffffff;
+
+    background: #e5f7ff;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s;
+}
+
+
+.task:nth-child(2n) {
+
+    background: #fff2c9;
+}
+
+
+.task:nth-child(3n) {
+
+    background: #f4e6ff;
+}
+
+
+.task:hover {
+
+    transform: scale(1.01);
+}
+
+
+/* TASK LEFT SIDE */
+
+.task-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+/* CHECKBOX */
+
+.task-left input[type="checkbox"] {
+
+    width: 25px;
+
+    height: 25px;
+
+    cursor: pointer;
+
+    accent-color: #42c76b;
+
+    flex-shrink: 0;
+}
+
+
+/* TASK ICON */
+
+.task-icon {
+
+    font-size: 25px;
+
+    min-width: 32px;
+
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+/* TASK TEXT */
+
+.task-text {
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #34495e;
+
+    word-break: break-word;
+}
+
+
+/* COMPLETED TASK */
+
+.completed .task-text {
+
+    text-decoration: line-through;
+
+    color: #888;
+}
+
+
+/* DELETE BUTTON */
+
+.delete-btn {
+
+    background: #ff6b6b;
+
+    color: white;
+
+    padding: 8px 12px;
+
+    border-radius: 13px;
+
+    border-bottom: 4px solid #d94b4b;
+
+    flex-shrink: 0;
+}
+
+
+/* ==============================
+   REWARD MESSAGE
+================================ */
+
+.reward-message {
+
+    text-align: center;
+
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border-radius: 18px;
+
+    background: #e8f7ff;
+
+    color: #39708e;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+.reward-message.success {
+
+    background: #d9ffd9;
+
+    color: #248a3d;
+
+    border: 3px solid #72d982;
+
+    animation: celebrate 0.8s ease;
+}
+
+
+/* CELEBRATION ANIMATION */
+
+@keyframes celebrate {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ==============================
+   BOTTOM SECTION
+================================ */
+
+.bottom-section {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 22px;
+
+    padding-top: 18px;
+
+    border-top: 3px dashed #ffd166;
+
+    flex-wrap: wrap;
+}
+
+
+#taskCount {
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #52697d;
+}
+
+
+#points {
+
+    font-weight: bold;
+
+    color: #e6a400;
+}
+
+
+.bottom-section button {
+
+    background: #ff6b9d;
+
+    color: white;
+
+    border-bottom: 4px solid #d74775;
+}
+
+
+/* ==============================
+   MOBILE DESIGN
+================================ */
+
+@media (max-width: 650px) {
+
+    body {
+
+        padding: 20px 12px;
+
+        background-position: center;
+    }
+
+
+    .container {
+
+        padding: 22px;
+
+        border-radius: 25px;
+    }
+
+
+    h1 {
+
+        font-size: 32px;
+    }
+
+
+    .subtitle {
+
+        font-size: 15px;
+    }
+
+
+    .input-section {
+
+        flex-direction: column;
+    }
+
+
+    .input-section button {
+
+        width: 100%;
+    }
+
+
+    .filter-section button {
+
+        padding: 10px 14px;
+    }
+
+
+    .task {
+
+        padding: 12px;
+
+        border-radius: 16px;
+    }
+
+
+    .task-text {
+
+        font-size: 15px;
+    }
+
+
+    .task-icon {
+
+        font-size: 21px;
+
+        min-width: 27px;
+    }
+
+
+    .bottom-section {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .bottom-section button {
+
+        width: 100%;
+    }
+}
