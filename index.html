@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Happy To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <h1>🌈 My Happy To-Do List ⭐</h1>
+
+        <p class="subtitle">
+            ✨ Small tasks, big achievements! ✨
+        </p>
+
+
+        <!-- ADD TASK -->
+
+        <div class="input-section">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="✏️ What do you want to do?"
+                maxlength="100"
+            >
+
+            <button onclick="addTask()">
+                ➕ Add Task
+            </button>
+
+        </div>
+
+
+        <!-- FILTER BUTTONS -->
+
+        <div class="filter-section">
+
+            <button onclick="showAll()">
+                ⭐ All
+            </button>
+
+            <button onclick="showActive()">
+                😊 Active
+            </button>
+
+            <button onclick="showCompleted()">
+                🏆 Completed
+            </button>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-box">
+
+            <div class="progress-text">
+
+                <span>🌟 My Progress</span>
+
+                <span id="progressText">0%</span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TASK LIST -->
+
+        <ul id="taskList"></ul>
+
+
+        <!-- REWARD MESSAGE -->
+
+        <div id="rewardMessage" class="reward-message">
+            ⭐ Add your first task and start your adventure! ⭐
+        </div>
+
+
+        <!-- BOTTOM SECTION -->
+
+        <div class="bottom-section">
+
+            <span id="taskCount">
+                0 tasks left
+            </span>
+
+            <span id="points">
+                ⭐ 0 points
+            </span>
+
+            <button onclick="clearCompleted()">
+                🗑️ Clear Completed
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
